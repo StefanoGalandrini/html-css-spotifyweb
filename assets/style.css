@@ -22,15 +22,21 @@ html {
     --fixed-height: 90px;
     --fixed-aside-large-width: 230px;
     --fixed-aside-small-width: 50px;
-
-
 }
 
+/*
+CONTAINER FOR ASIDE AND MAIN GRID
+*/
 .container {
     height: calc(100vh - var(--fixed-height));
     width: 100%;
     display: flex;
 }
+
+
+/*
+GENERAL BLOCKS DEFINITION
+*/
 
 aside {
     height: 100%;
@@ -67,6 +73,10 @@ footer {
     z-index: 1;
 }
 
+
+/*
+OVERLAY BUTTON AND HOVER EFFECT
+*/
 .overlay .btn {
     position: absolute;
     text-decoration: none;
@@ -85,6 +95,7 @@ footer {
 .overlay .btn:hover {
     transform: scale(1.2);
 }
+
 
 
 /*
@@ -119,21 +130,26 @@ main .site-area li {
     transition: color 200ms;
 }
 
-main .site-area li:hover {
-    color: white;
-}
-
 main .site-area li hr {
     margin: 0.2rem 2rem 0;
     border: 2px solid var(--lime-color);
 }
+
+main .site-area li:hover {
+    color: white;
+}
+
+
+
+/*
+MAIN CENTRAL GRID CONTENTS
+*/
 
 main h2 {
     color: white;
     font-size: 1.75rem;
     margin-bottom: 2rem;
 }
-
 
 main .cards-container {
     width: 100%;
@@ -165,6 +181,17 @@ main .cards-container .card .author {
     font-weight: 700;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
