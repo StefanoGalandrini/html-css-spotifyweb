@@ -39,10 +39,11 @@ aside {
 }
 
 main {
-    max-width: calc(100% - var(--fixed-aside-large-width));
+    width: calc(100% - var(--fixed-aside-large-width));
     height: 100%;
     overflow-y: scroll;
     background-color: var(--main-bkg-color);
+    padding-top: var(--fixed-height);
 }
 
 footer {
@@ -57,11 +58,67 @@ footer {
 
 .overlay {
     height: var(--fixed-height);
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.7);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     margin-left: var(--fixed-aside-large-width);
+}
 
+.overlay .btn {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    top: 1.5rem;
+    right: 2.25rem;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 0.7em 2.2em;
+    transition: 200ms
+}
+
+.overlay .btn:hover {
+    transform: scale(1.2);
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+main .sections {
+    display: flex;
+}
+
+main .sections ul {
+    width: 50%;
+    height: 3rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+main .sections li {
+    height: 100%;
+    color: var(--main-grey-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+main .sections li:hover {
+    color: white;
+}
+
+main .sections li hr {
+    margin: 0.2rem 2rem 0;
+    border: 2px solid var(--lime-color);
 }
