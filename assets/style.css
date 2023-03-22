@@ -21,29 +21,30 @@ html {
     --sidebar-grey-color: #6f6f6f;
     --fixed-height: 90px;
     --fixed-aside-large-width: 230px;
+    --fixed-aside-small-width: 50px;
+
 
 }
 
 .container {
     height: calc(100vh - var(--fixed-height));
     width: 100%;
-    background-color: purple;
     display: flex;
 }
 
 aside {
     height: 100%;
     width: var(--fixed-aside-large-width);
-    background-color: #9e3838;
-    z-index: 1;
+    background-color: black;
+    z-index: 5;
 }
 
 main {
-    width: calc(100% - var(--fixed-aside-large-width));
+    width: 100%;
     height: 100%;
     overflow-y: scroll;
     background-color: var(--main-bkg-color);
-    padding-top: var(--fixed-height);
+    padding: var(--fixed-height) 1.5rem 3rem;
 }
 
 footer {
@@ -58,12 +59,12 @@ footer {
 
 .overlay {
     height: var(--fixed-height);
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    margin-left: var(--fixed-aside-large-width);
+    z-index: 1;
 }
 
 .overlay .btn {
@@ -85,40 +86,112 @@ footer {
     transform: scale(1.2);
 }
 
+
+/*
+NAVIGATION BAR IN MAIN SECTION
+*/
+
 ul,
 li {
     list-style-type: none;
 }
 
-main .sections {
+main .site-area ul {
+    max-width: 100%;
+    height: 2.5rem;
     display: flex;
-}
-
-main .sections ul {
-    width: 50%;
-    height: 3rem;
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    white-space: nowrap;
+    margin-bottom: 4rem;
 }
 
-main .sections li {
+main .site-area li {
     height: 100%;
+    margin: 0 1rem;
     color: var(--main-grey-color);
     text-transform: uppercase;
+    font-size: 0.9rem;
     font-weight: 700;
     padding: 1rem 0;
     cursor: pointer;
+    white-space: nowrap;
     transition: color 200ms;
 }
 
-main .sections li:hover {
+main .site-area li:hover {
     color: white;
 }
 
-main .sections li hr {
+main .site-area li hr {
     margin: 0.2rem 2rem 0;
     border: 2px solid var(--lime-color);
+}
+
+main h2 {
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+
+main .cards-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+main .cards-container .card {
+    flex: 0 0 calc((100% - 5 * 1rem) / 6);
+}
+
+main .cards-container .card img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+main .cards-container .card .title {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+main .cards-container .card .author {
+    color: var(--main-grey-color);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+
+
+/*
+MEDIA QUERIES FOR CENTRAL GRID
+*/
+
+@media screen and (max-width: 1100px) and (min-width: 700px) {
+    main .cards-container .card {
+        flex: 0 0 calc((100% - 3 * 1rem) / 4);
+    }
+}
+
+@media screen and (max-width: 699px) {
+    main .cards-container .card {
+        flex: 0 0 calc((100% - 1rem) / 2);
+    }
+}
+
+/*
+MEDIA QUERY FOR SIDEBAR
+*/
+
+@media screen and (max-width: 600px) {
+    aside {
+        width: var(--fixed-aside-small-width);
+    }
 }
