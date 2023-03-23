@@ -21,8 +21,7 @@ html {
     --player-color: #282828;
     --sidebar-grey-color: #6f6f6f;
     --fixed-height: 90px;
-    --fixed-aside-large-width: 230px;
-    --fixed-aside-small-width: 50px;
+    --aside-width: 230px;
 }
 
 section {
@@ -33,8 +32,8 @@ section {
 CONTAINER FOR ASIDE AND MAIN GRID
 */
 .container {
-    height: calc(100vh - var(--fixed-height));
-    /* height: 100vh; */
+    /* height: calc(100vh - var(--fixed-height)); */
+    height: 100vh;
     width: 100%;
     display: flex;
 }
@@ -49,16 +48,15 @@ aside {
     background-color: black;
     z-index: 5;
     padding: 1rem;
-    flex: 0 0 var(--fixed-aside-large-width);
+    flex: 0 0 var(--aside-width);
     overflow: hidden;
 }
 
 main {
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: var(--main-bkg-color);
-    padding: var(--fixed-height) 1.5rem 3rem;
 }
 
 footer {
@@ -71,6 +69,11 @@ footer {
     z-index: 50;
 }
 
+
+/*
+OVERLAY BAR, BUTTON AND HOVER EFFECT
+*/
+
 .overlay {
     height: var(--fixed-height);
     background-color: rgba(0,0,0,0.6);
@@ -80,6 +83,25 @@ footer {
     left: 0;
     right: 0;
     z-index: 1;
+}
+
+.overlay .btn {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    top: 1.5rem;
+    right: 2.25rem;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 0.7em 2.2em;
+    overflow: hidden;
+    transition: 200ms;
+}
+
+.overlay .btn:hover {
+    transform: scale(1.2);
 }
 
 
@@ -149,8 +171,8 @@ aside .container-playlist > a {
 }    
 
 aside .playlist {
-    height: 15rem;
-    overflow-y: scroll;
+    max-height: 30vh;
+    overflow-y: auto;
 }
 
 aside .aside-menu .add {
@@ -181,32 +203,18 @@ aside a:hover .add {
 
 
 
-/*
-OVERLAY BUTTON AND HOVER EFFECT
-*/
-.overlay .btn {
-    position: absolute;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    top: 1.5rem;
-    right: 2.25rem;
-    border: 2px solid white;
-    border-radius: 50px;
-    padding: 0.7em 2.2em;
-    transition: 200ms;
-}
-
-.overlay .btn:hover {
-    transform: scale(1.2);
-}
-
 
 
 /*
-NAVIGATION BAR IN MAIN SECTION
+MAIN SECTION
 */
+
+main .content {
+    padding: var(--fixed-height) 1.5rem 3rem;
+}
+
+
+/* nav menu */
 
 ul,
 li {
@@ -246,9 +254,7 @@ main .site-area li:hover {
 
 
 
-/*
-MAIN CENTRAL GRID CONTENTS
-*/
+/* Central Grid */
 
 main h2 {
     color: white;
@@ -400,7 +406,8 @@ MEDIA QUERY FOR SIDEBAR
 
 @media screen and (max-width: 600px) {
     aside {
-        flex: 0 0 var(--fixed-aside-small-width);
+        --aside-width: 50px;
+        /* flex: 0 0 var(--fixed-aside-small-width); */
         padding: 0.7rem 0;
     }
 
