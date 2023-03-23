@@ -49,9 +49,12 @@ aside {
     padding: 1rem;
     flex: 0 0 var(--aside-width);
     overflow: hidden;
+    position: relative;
 }
 
 main {
+    --cols: 6;
+    --gap: 1rem;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -200,7 +203,34 @@ aside a:hover .add {
 }
 
 
+/* download app and user info */
 
+aside .info {
+    margin-top: 11rem;
+}
+
+aside .info .install img {
+    width: 20px;
+}
+
+aside .info .install {
+    border-bottom: 1px solid var(--sidebar-grey-color);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+aside .info .user img {
+    width: 25px;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--sidebar-grey-color);
+}    
+
+aside .info .user span {
+    color: white;
+    font-size: 0.9rem;
+}
 
 
 
@@ -275,12 +305,12 @@ main .cards-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--gap);
     padding-top: 1rem;
 }
 
 main .cards-container .card {
-    flex: 0 0 calc((100% - 5 * 1rem) / 6);
+    flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
 }
 
 main .cards-container .card img {
@@ -337,13 +367,13 @@ MEDIA QUERIES FOR CENTRAL GRID
 
 @media screen and (max-width: 1100px) and (min-width: 700px) {
     main .cards-container .card {
-        flex: 0 0 calc((100% - 3 * 1rem) / 4);
+        --cols: 4;
     }
 }
 
 @media screen and (max-width: 699px) and (min-width: 391px) {
     main .cards-container .card {
-        flex: 0 0 calc((100% - 1rem) / 2);
+        --cols: 2;
     }
 
     main .site-area li {
@@ -357,7 +387,7 @@ mobile - 390px
 
 @media screen and (max-width: 390px) {
     main .cards-container .card {
-        flex: 0 0 100%;
+        --cols: 1;
     }
 
     main .site-area ul {
@@ -371,12 +401,15 @@ mobile - 390px
         font-size: 0.75rem;
     }
 
-    main .site-area li hr {
+    main .site-area li.active::after {
         width: 2.5rem;
-        margin: 0.2rem 0;
+        left: 1rem;
+        bottom: 0.2rem;
     }
+
     main .cards-container .card img {
         margin-bottom: 0.2rem;
+        aspect-ratio: 1 / 1;
     }
 
     main .cards-container .card .title {
@@ -416,24 +449,18 @@ MEDIA QUERY FOR SIDEBAR
 @media screen and (max-width: 600px) {
     aside {
         --aside-width: 50px;
-        /* flex: 0 0 var(--fixed-aside-small-width); */
         padding: 0.7rem 0;
     }
 
     aside .logo-small {
         display: block;
+        margin-left: 8px;
         width: 32px;
-        margin-inline: auto;
     }
 
     aside .aside-menu li > a {
         display: block;
-        margin-bottom: 10px;
-        margin-inline: auto;
-    }
-
-    aside .aside-menu img {
-        margin-left: 10px;
+        margin: 30px 12px 0 10px;
     }
 
     aside .logo,
@@ -442,5 +469,14 @@ MEDIA QUERY FOR SIDEBAR
     aside .container-playlist,
     aside .playlist {
         display: none;
+    }
+
+    aside .info .install {
+        border-bottom: none;
+        margin: 440px 0 -20px 5px;
+    }
+
+    aside .info .user img {
+        margin-left: 3px;
     }
 }
