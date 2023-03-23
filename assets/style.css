@@ -387,6 +387,8 @@ FOOTER WITH PLAYER
     padding: 0.5rem;
 }
 
+/* left side */
+
 .player .left {
     display: flex;
     justify-content: flex-start;
@@ -435,7 +437,6 @@ FOOTER WITH PLAYER
 .player .center {
     height: 80%;
     flex: 0 0 50%;
-    background-color: gold;
 }
 
 .player .right {
@@ -443,6 +444,79 @@ FOOTER WITH PLAYER
     flex: 0 0 25%;
     background-color: salmon;
 }
+
+
+/* central part */
+
+.player .center {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.player .center .icons {
+    display: flex;
+    align-items: center;
+    flex: 0 0 50%;
+}
+
+.player .center .icons i:not(:last-child) {
+    margin-right: 1.5rem;
+}
+
+.player .center .icons i:nth-child(3) {
+    font-size: 1.75rem;
+    transition: 200ms
+}
+
+.player .center .icons i:nth-child(3):hover {
+    transform: scale(1.2);
+}
+
+.player .center .time {
+    display: flex;
+    align-items: center;
+    flex: 0 0 50%;
+}
+
+.player .center .time span {
+    font-size: 0.75rem;
+    color: white;
+}
+
+.player .center .time .start {
+    width: 130px;
+    height: 4px;
+    background-color: white;
+    margin-left: 1.5rem;
+    transition: background-color 300ms;
+}
+
+.player .center .time .circle {
+    width: 13px;
+    height: 13px;
+    background-color: white;
+    border-radius: 20px;
+    transition: background-color 300ms;
+}
+
+.player .center .time:hover .start,
+.player .center .time:hover .circle {
+    background-color: var(--lime-color);
+}
+
+.player .center .time .remaining {
+    width: 270px;
+    height: 4px;
+    background-color: var(--main-grey-color);
+    margin-right: 1.5rem;
+}
+
+
 
 
 
