@@ -310,12 +310,43 @@ main .cards-container {
 }
 
 main .cards-container .card {
+    display: flex;
+    flex-direction: column;
     flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
 }
 
-main .cards-container .card img {
+main .cards-container .card .over {
+    position: relative;
     max-width: 100%;
+    aspect-ratio: 1 / 1;
     margin-bottom: 1rem;
+}
+
+main .cards-container .card img {
+    filter: brightness(100%);
+    display: block;
+    max-width: 100%;
+    transition: brightness 300ms;
+}    
+
+main .cards-container .card .overlay {
+    opacity: 0;
+    position: absolute;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    filter: invert(1);
+    transition: opacity 300ms;
+}
+
+main .cards-container .card:hover .overlay {
+    opacity: 1;
+}
+
+main .cards-container .card:hover .image {
+    filter: brightness(40%);
 }
 
 main .cards-container .card .title {
