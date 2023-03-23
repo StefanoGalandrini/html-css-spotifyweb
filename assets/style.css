@@ -377,8 +377,72 @@ main section .subtitle {
 
 
 /*
-MEDIA QUERIES FOR CENTRAL GRID
+FOOTER WITH PLAYER
 */
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.player .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80%;
+    flex: 0 0 25%;
+    color: var(--main-grey-color);
+}
+
+.player .left img {
+    width: 60px;
+    margin-right: 1rem;
+}
+
+.player .left .author {
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+}    
+
+.player .left .title {
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    cursor: pointer;
+}
+
+.player .left .text {
+    margin-right: 2.5rem;
+}
+
+.player .left i {
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+    cursor: pointer;
+}
+
+.player .left .title:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.player .left i:hover {
+    color: white;
+}
+
+.player .center {
+    height: 80%;
+    flex: 0 0 50%;
+    background-color: gold;
+}
+
+.player .right {
+    height: 80%;
+    flex: 0 0 25%;
+    background-color: salmon;
+}
 
 
 
