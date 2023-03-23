@@ -489,6 +489,7 @@ FOOTER WITH PLAYER
 }
 
 .player .center .time .start {
+    position: relative;
     width: 130px;
     height: 4px;
     background-color: white;
@@ -497,16 +498,25 @@ FOOTER WITH PLAYER
 }
 
 .player .center .time .circle {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -5px;
+    right: -14px;
+    display: none;
+    opacity: 0;
     background-color: white;
     border-radius: 20px;
-    transition: background-color 300ms;
+    transition: opacity 300ms;
 }
 
-.player .center .time:hover .start,
-.player .center .time:hover .circle {
+.player .center .time:hover .start {
     background-color: var(--lime-color);
+}
+
+.player .center .time:hover .circle {
+    display: block;
+    opacity: 1;
 }
 
 .player .center .time .remaining {
