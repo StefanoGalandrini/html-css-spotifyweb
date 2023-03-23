@@ -34,6 +34,7 @@ CONTAINER FOR ASIDE AND MAIN GRID
 */
 .container {
     height: calc(100vh - var(--fixed-height));
+    /* height: 100vh; */
     width: 100%;
     display: flex;
 }
@@ -45,10 +46,11 @@ GENERAL BLOCKS DEFINITION
 
 aside {
     height: 100%;
-    min-width: var(--fixed-aside-large-width);
     background-color: black;
     z-index: 5;
     padding: 1rem;
+    flex: 0 0 var(--fixed-aside-large-width);
+    overflow: hidden;
 }
 
 main {
@@ -73,6 +75,7 @@ footer {
     height: var(--fixed-height);
     background-color: rgba(0,0,0,0.6);
     position: fixed;
+    overflow: hidden;
     top: 0;
     left: 0;
     right: 0;
@@ -192,7 +195,7 @@ OVERLAY BUTTON AND HOVER EFFECT
     border: 2px solid white;
     border-radius: 50px;
     padding: 0.7em 2.2em;
-    transition: 200ms
+    transition: 200ms;
 }
 
 .overlay .btn:hover {
@@ -225,7 +228,7 @@ main .site-area li {
     margin: 0 0.5rem;
     color: var(--main-grey-color);
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     padding: 1rem 0;
     cursor: pointer;
     white-space: nowrap;
@@ -327,6 +330,10 @@ MEDIA QUERIES FOR CENTRAL GRID
     main .cards-container .card {
         flex: 0 0 calc((100% - 1rem) / 2);
     }
+
+    main .site-area li {
+        font-size: 0.75rem;
+    }
 }
 
 /*
@@ -346,6 +353,7 @@ mobile - 390px
     main .site-area li {
         margin-bottom: -0.5rem;
         flex: 0 0 100%;
+        font-size: 0.75rem;
     }
 
     main .site-area li hr {
@@ -359,6 +367,7 @@ mobile - 390px
     main .cards-container .card .title {
         margin-bottom: 0.3rem;
     }
+
     main .cards-container .card .author {
         margin-bottom: 1.5rem;
     }
@@ -391,39 +400,28 @@ MEDIA QUERY FOR SIDEBAR
 
 @media screen and (max-width: 600px) {
     aside {
-        min-width: auto;
-        width: var(--fixed-aside-small-width);
-        padding: 0.7rem auto;
+        flex: 0 0 var(--fixed-aside-small-width);
+        padding: 0.7rem 0;
     }
 
     aside .logo-small {
         display: block;
         width: 32px;
-        margin-left: -0.45rem;
-        margin-bottom: 10px;
-    }
-
-    aside .logo {
-        display: none;
+        margin-inline: auto;
     }
 
     aside .aside-menu li > a {
         display: block;
         margin-bottom: 10px;
+        margin-inline: auto;
     }
 
     aside .aside-menu img {
-        margin-left: -5px;
+        margin-left: 10px;
     }
 
-    aside .aside-menu span {
-        display: none;
-    }
-
-    /*
-    PLAYLIST
-    */
-
+    aside .logo,
+    aside .aside-menu span,
     aside .aside-menu .title,
     aside .container-playlist,
     aside .playlist {
