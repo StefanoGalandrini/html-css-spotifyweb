@@ -442,14 +442,12 @@ FOOTER WITH PLAYER
 .player .right {
     height: 80%;
     flex: 0 0 25%;
-    background-color: salmon;
 }
 
 
 /* central part */
 
 .player .center {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -481,6 +479,7 @@ FOOTER WITH PLAYER
     display: flex;
     align-items: center;
     flex: 0 0 50%;
+    cursor: pointer;
 }
 
 .player .center .time span {
@@ -504,20 +503,9 @@ FOOTER WITH PLAYER
     top: -5px;
     right: -14px;
     display: none;
-    opacity: 0;
     background-color: white;
     border-radius: 20px;
-    transition: opacity 300ms;
-}
-
-.player .center .time:hover .start {
-    background-color: var(--lime-color);
-}
-
-.player .center .time:hover .circle {
-    display: block;
-    opacity: 1;
-}
+}    
 
 .player .center .time .remaining {
     width: 270px;
@@ -525,6 +513,73 @@ FOOTER WITH PLAYER
     background-color: var(--main-grey-color);
     margin-right: 1.5rem;
 }
+
+.player .center .time:hover .start {
+    background-color: var(--lime-color);
+}    
+
+.player .center .time:hover .circle {
+    display: block;
+    opacity: 1;
+}    
+
+
+/* right side */
+
+.player .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.player .right i {
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.player .right .volume {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.player .right .volume .start {
+    position: relative;
+    width: 60px;
+    height: 4px;
+    background-color: white;
+    transition: background-color 300ms;
+}
+
+.player .right .volume .circle {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -5px;
+    right: -14px;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.player .right .volume .remaining {
+    width: 140px;
+    height: 4px;
+    background-color: var(--main-grey-color);
+}
+
+.player .right .volume:hover .start {
+    background-color: var(--lime-color);
+}
+
+.player .right .volume:hover .circle {
+    display: block;
+    opacity: 1;
+}
+
 
 
 
