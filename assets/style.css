@@ -24,15 +24,10 @@ html {
     --aside-width: 230px;
 }
 
-section {
-    margin-bottom: 5rem;
-}
-
 /*
 CONTAINER FOR ASIDE AND MAIN GRID
 */
 .container {
-    /* height: calc(100vh - var(--fixed-height)); */
     height: 100vh;
     width: 100%;
     display: flex;
@@ -42,6 +37,10 @@ CONTAINER FOR ASIDE AND MAIN GRID
 /*
 GENERAL BLOCKS DEFINITION
 */
+
+section {
+    margin-bottom: 5rem;
+}
 
 aside {
     height: 100%;
@@ -214,7 +213,7 @@ main .content {
 }
 
 
-/* nav menu */
+/* horizontal site nav menu */
 
 ul,
 li {
@@ -233,19 +232,29 @@ main .site-area ul {
 
 main .site-area li {
     height: 100%;
-    margin: 0 0.5rem;
     color: var(--main-grey-color);
     text-transform: uppercase;
     font-size: 0.9rem;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     cursor: pointer;
     white-space: nowrap;
+    position: relative;
     transition: color 200ms;
 }
 
-main .site-area li hr {
-    margin: 0.2rem 1.2rem 0;
-    border: 1px solid var(--lime-color);
+main .site-area li.active {
+    color: white;
+}
+
+main .site-area li.active::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--lime-color);
 }
 
 main .site-area li:hover {
