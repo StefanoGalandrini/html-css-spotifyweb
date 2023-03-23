@@ -10,6 +10,7 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 
     /* 
     var definitions
@@ -44,9 +45,10 @@ GENERAL BLOCKS DEFINITION
 
 aside {
     height: 100%;
-    width: var(--fixed-aside-large-width);
+    min-width: var(--fixed-aside-large-width);
     background-color: black;
     z-index: 5;
+    padding: 1rem;
 }
 
 main {
@@ -69,13 +71,111 @@ footer {
 
 .overlay {
     height: var(--fixed-height);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
 }
+
+
+
+/*
+ASIDE CONTENTS
+*/
+
+aside .logo-small {
+    display: none;
+}
+
+aside .logo {
+    width: 140px;
+}
+
+aside .aside-menu .white {
+    color: white;
+}
+
+aside .aside-menu {
+    padding: 1rem 0;
+}
+
+aside .aside-menu li > a {
+    display: flex;
+    align-items: center;
+}
+
+aside a {
+    margin: 0;
+    text-decoration: none;
+    color: var(--sidebar-grey-color);
+}
+
+aside .highlight {
+    border-left: 2px solid var(--lime-color);
+    margin-left: -12px;
+    padding-left: 10px;
+}
+
+aside .aside-menu img {
+    width: 28px;
+    margin-right: 10px;
+}
+
+aside .aside-menu span {
+    padding: 0.6rem 0;
+    color: var(--sidebar-grey-color);
+    font-size: .8rem;
+    transition: color 200ms;
+}
+
+/*
+PLAYLIST
+*/
+
+aside .aside-menu .title {
+    padding: 2rem 0 0.5rem;
+    text-transform: uppercase;
+}
+
+aside .container-playlist > a {
+    display: flex;
+    width: 100%;
+    margin: 0.5rem 0;
+}    
+
+aside .playlist {
+    height: 15rem;
+    overflow-y: scroll;
+}
+
+aside .aside-menu .add {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin-right: 10px;
+    text-align: center;
+    background-color: var(--sidebar-grey-color);
+    font-size: 2rem;
+    color: black;
+    transition: background-color 200ms;
+}
+
+aside .aside-menu .create-playlist {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+aside a:hover span {
+    color: white;
+}
+
+aside a:hover .add {
+    background-color: white;
+}
+
+
 
 
 /*
@@ -87,7 +187,6 @@ OVERLAY BUTTON AND HOVER EFFECT
     color: white;
     text-transform: uppercase;
     font-size: 0.8rem;
-    font-weight: 700;
     top: 1.5rem;
     right: 2.25rem;
     border: 2px solid white;
@@ -123,11 +222,10 @@ main .site-area ul {
 
 main .site-area li {
     height: 100%;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     color: var(--main-grey-color);
     text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 0.7rem;
     padding: 1rem 0;
     cursor: pointer;
     white-space: nowrap;
@@ -135,8 +233,8 @@ main .site-area li {
 }
 
 main .site-area li hr {
-    margin: 0.2rem 2rem 0;
-    border: 2px solid var(--lime-color);
+    margin: 0.2rem 1.2rem 0;
+    border: 1px solid var(--lime-color);
 }
 
 main .site-area li:hover {
@@ -151,7 +249,7 @@ MAIN CENTRAL GRID CONTENTS
 
 main h2 {
     color: white;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
 }
 
@@ -175,7 +273,6 @@ main .cards-container .card img {
 main .cards-container .card .title {
     color: white;
     font-size: 0.9rem;
-    font-weight: 700;
     text-align: center;
     margin-bottom: 0.8rem;
 }
@@ -183,14 +280,12 @@ main .cards-container .card .title {
 main .cards-container .card .author {
     color: var(--main-grey-color);
     font-size: 0.85rem;
-    font-weight: 700;
     text-align: center;
 }
 
 main section .subtitle {
     color: var(--main-grey-color);
     font-size: 0.85rem;
-    font-weight: 700;
     text-align: left;
     margin-bottom: 1.5rem;
 }
@@ -200,6 +295,11 @@ main section .subtitle {
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
+
+
+/*
+MEDIA QUERIES FOR CENTRAL GRID
+*/
 
 
 
@@ -223,40 +323,34 @@ MEDIA QUERIES FOR CENTRAL GRID
     }
 }
 
-@media screen and (max-width: 699px) and (min-width: 400px) {
+@media screen and (max-width: 699px) and (min-width: 391px) {
     main .cards-container .card {
         flex: 0 0 calc((100% - 1rem) / 2);
     }
 }
 
 /*
-mobile - 400px
+mobile - 390px
 */
 
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 390px) {
     main .cards-container .card {
         flex: 0 0 100%;
     }
 
     main .site-area ul {
-    max-width: 100%;
-    height: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 9rem;
+        justify-content: flex-start;
+        margin-bottom: 12rem;
     }
 
     main .site-area li {
-        font-size: 0.75rem;
-        margin-bottom: 0;
-        flex: 1
+        margin-bottom: -0.5rem;
+        flex: 0 0 100%;
     }
 
     main .site-area li hr {
-        margin: 0.2rem 4.5rem 0 0;
-        border: 1px solid var(--lime-color);
+        width: 2.5rem;
+        margin: 0.2rem 0;
     }
     main .cards-container .card img {
         margin-bottom: 0.2rem;
@@ -266,17 +360,26 @@ mobile - 400px
         margin-bottom: 0.3rem;
     }
     main .cards-container .card .author {
-    margin-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     main h2 {
-    font-size: 1.5rem;
-    text-align: center;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     main section .subtitle {
-    text-align: center;
-    margin-bottom: 0.75rem;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .overlay .btn {
+        width: 50%;
+        text-align: center;
+        font-size: 0.65rem;
+        top: 1.8rem;
+        right: 2rem;
+        border: 1px solid white;
     }
 }
 
@@ -288,6 +391,42 @@ MEDIA QUERY FOR SIDEBAR
 
 @media screen and (max-width: 600px) {
     aside {
+        min-width: auto;
         width: var(--fixed-aside-small-width);
+        padding: 0.7rem auto;
+    }
+
+    aside .logo-small {
+        display: block;
+        width: 32px;
+        margin-left: -0.45rem;
+        margin-bottom: 10px;
+    }
+
+    aside .logo {
+        display: none;
+    }
+
+    aside .aside-menu li > a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    aside .aside-menu img {
+        margin-left: -5px;
+    }
+
+    aside .aside-menu span {
+        display: none;
+    }
+
+    /*
+    PLAYLIST
+    */
+
+    aside .aside-menu .title,
+    aside .container-playlist,
+    aside .playlist {
+        display: none;
     }
 }
