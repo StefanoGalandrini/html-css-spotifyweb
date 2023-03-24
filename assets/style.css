@@ -219,6 +219,7 @@ aside .info .install::after {
 	border-bottom: 1px solid var(--sidebar-grey-color);
 	display: block;
 	width: 190px;
+	padding-bottom: 4px;
 }
 
 aside .info .user img {
@@ -227,10 +228,10 @@ aside .info .user img {
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 	background-color: var(--sidebar-grey-color);
-	margin-top: 3px;
+	margin-top: 4px;
 }
 
-aside .info-container .user span {
+aside .info .user span {
 	color: white;
 	font-size: 0.9rem;
 }
@@ -701,8 +702,6 @@ MEDIA QUERY FOR SIDEBAR
 @media screen and (max-width: 600px) {
 	aside {
 		--aside-width: 50px;
-		margin: 0;
-		padding: 0.5rem 0;
 	}
 
 	aside .logo,
@@ -713,28 +712,28 @@ MEDIA QUERY FOR SIDEBAR
 		display: none;
 	}
 
-	aside .logo-small {
+	.menu-container .logo-small {
 		display: block;
 		width: 32px;
-		margin: 0 auto 1.5rem;
-	}
-	aside .menu-container img {
-		margin-bottom: 10px;
+		margin: 4px 0 25px -7px;
 	}
 
-	aside .info-container img {
-		margin-bottom: 5px;
-	}
-
-	aside .highlight {
+	.menu-container .highlight {
 		border-left: none;
+		margin: 0 0 10px -10px;
 	}
 
-	aside .container {
-		align-items: center;
+	.menu-container .menu img {
+		margin-left: -5px;
+		margin-bottom: 6px;
 	}
 
-	aside .info-container .user img {
-		margin-bottom: -10px;
+	.menu-container .info .user img {
+		margin-left: -3px;
+	}
+
+	aside .info .install::after {
+		content: "";
+		border-bottom: none;
 	}
 }
