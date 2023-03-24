@@ -144,8 +144,10 @@ aside .container {
 }	
 
 aside .aside-menu li a,
-aside .playlist a {
+aside .playlist a,
+aside .info-container a {
 	display: flex;
+	width: max-content;
 	justify-content: flex-start;
 	align-items: space-between;
 }
@@ -679,53 +681,10 @@ MEDIA QUERY FOR SIDEBAR
 */
 
 @media screen and (max-width: 600px) {
-	/* aside {
-        --aside-width: 50px;
-        padding: 0.7rem 0;
-    }
-
-    aside .logo-small {
-        display: block;
-        margin-left: 8px;
-        width: 32px;
-    }
-
-    aside .aside-menu li > a {
-        display: block;
-        margin: 30px 12px 0 10px;
-    }
-
-    aside .logo,
-    aside .aside-menu span,
-    aside .aside-menu .title,
-    aside .container-playlist,
-    aside .playlist {
-        display: none;
-    }
-
-    aside .info .install {
-        border-bottom: none;
-        margin: 440px 0 -20px 5px;
-    }
-
-    aside .info .user img {
-        margin-left: 3px;
-    }
-} */
-
-
 	aside {
 		--aside-width: 50px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-		padding: 0.7rem 0 var(--fixed-height);
-	}
-
-	aside * {
 		margin: 0;
-		padding: 0;
+		padding: 0.5rem 0;
 	}
 
 	aside .logo,
@@ -739,35 +698,25 @@ MEDIA QUERY FOR SIDEBAR
 	aside .logo-small {
 		display: block;
 		width: 32px;
-	}	
-
-	aside .highlight {
-		border-left: none;
-	}	
-
-	aside .container {
-		height: calc(100vx - var(--fixed-height));
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
+		margin: 0 auto 1.5rem;
 	}
-
-	aside .main-menu li {
+	aside .main-menu img {
 		margin-bottom: 10px;
 	}
 
-	aside .main-menu img,
-	aside .info img {
-		margin: 5px 0 0 3px;
+	aside .info-container img {
+		margin-bottom: 5px;
 	}
 
-	aside .info {
-		margin-top: 0px;
-		align-self: flex-end;
+	aside .highlight {
+		border-left: none;
 	}
 
-	aside .info li {
-		margin-bottom: 0;
+	aside .container {
+		align-items: center;
+	}
+
+	aside .info-container .user img {
+		margin-bottom: -10px;
 	}
 }
