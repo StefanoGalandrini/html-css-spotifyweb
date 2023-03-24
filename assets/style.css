@@ -78,7 +78,7 @@ OVERLAY BAR, BUTTON AND HOVER EFFECT
 
 .overlay {
     height: var(--fixed-height);
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     overflow: hidden;
     top: 0;
@@ -128,7 +128,7 @@ aside .aside-menu {
     padding: 1rem 0;
 }
 
-aside .aside-menu li > a {
+aside .aside-menu li>a {
     display: flex;
     align-items: center;
 }
@@ -166,11 +166,11 @@ aside .aside-menu .title {
     text-transform: uppercase;
 }
 
-aside .container-playlist > a {
+aside .container-playlist>a {
     display: flex;
     width: 100%;
     margin: 0.5rem 0;
-}    
+}
 
 aside .playlist {
     max-height: 30vh;
@@ -225,7 +225,7 @@ aside .info .user img {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: var(--sidebar-grey-color);
-}    
+}
 
 aside .info .user span {
     color: white;
@@ -327,7 +327,7 @@ main .cards-container .card img {
     display: block;
     max-width: 100%;
     transition: brightness 300ms;
-}    
+}
 
 main .cards-container .card .overlay {
     opacity: 0;
@@ -380,6 +380,8 @@ main section .subtitle {
 FOOTER WITH PLAYER
 */
 
+/* general rules */
+
 .player {
     display: flex;
     justify-content: space-between;
@@ -387,16 +389,37 @@ FOOTER WITH PLAYER
     padding: 0.5rem;
 }
 
-/* left side */
-
 .player .left {
+    height: 80%;
     display: flex;
+    flex: 0 0 30%;
     justify-content: flex-start;
     align-items: center;
-    height: 80%;
-    flex: 0 0 25%;
     color: var(--main-grey-color);
 }
+
+.player .center {
+    height: 80%;
+    display: flex;
+    flex: 0 0 40%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.player .right {
+    height: 80%;
+    display: flex;
+    flex: 0 0 30%;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* left side */
 
 .player .left img {
     width: 60px;
@@ -407,7 +430,7 @@ FOOTER WITH PLAYER
     color: white;
     font-size: 0.8rem;
     line-height: 1.2rem;
-}    
+}
 
 .player .left .title {
     font-size: 0.7rem;
@@ -434,32 +457,13 @@ FOOTER WITH PLAYER
     color: white;
 }
 
-.player .center {
-    height: 80%;
-    flex: 0 0 50%;
-}
-
-.player .right {
-    height: 80%;
-    flex: 0 0 25%;
-}
-
 
 /* central part */
-
-.player .center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    color: white;
-}
 
 .player .center .icons {
     display: flex;
     align-items: center;
-    flex: 0 0 50%;
+    flex: 1;
 }
 
 .player .center .icons i:not(:last-child) {
@@ -478,7 +482,7 @@ FOOTER WITH PLAYER
 .player .center .time {
     display: flex;
     align-items: center;
-    flex: 0 0 50%;
+    flex: 0 0;
     cursor: pointer;
 }
 
@@ -502,10 +506,11 @@ FOOTER WITH PLAYER
     position: absolute;
     top: -5px;
     right: -14px;
-    display: none;
+    opacity: 0;
     background-color: white;
     border-radius: 20px;
-}    
+    transition: opacity 150ms
+}
 
 .player .center .time .remaining {
     width: 270px;
@@ -516,23 +521,14 @@ FOOTER WITH PLAYER
 
 .player .center .time:hover .start {
     background-color: var(--lime-color);
-}    
+}
 
 .player .center .time:hover .circle {
-    display: block;
     opacity: 1;
-}    
+}
 
 
 /* right side */
-
-.player .right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 1.1rem;
-    color: white;
-}
 
 .player .right i {
     font-size: 0.9rem;
@@ -560,9 +556,10 @@ FOOTER WITH PLAYER
     position: absolute;
     top: -5px;
     right: -14px;
-    display: none;
+    opacity: 0;
     background-color: white;
     border-radius: 20px;
+    transition: opacity 150ms;
 }
 
 .player .right .volume .remaining {
@@ -576,7 +573,6 @@ FOOTER WITH PLAYER
 }
 
 .player .right .volume:hover .circle {
-    display: block;
     opacity: 1;
 }
 
@@ -692,7 +688,7 @@ MEDIA QUERY FOR SIDEBAR
         width: 32px;
     }
 
-    aside .aside-menu li > a {
+    aside .aside-menu li>a {
         display: block;
         margin: 30px 12px 0 10px;
     }
