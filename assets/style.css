@@ -138,11 +138,20 @@ aside .playlist a,
 aside .info a {
 	display: flex;
 	width: max-content;
-	justify-content: flex-start;
-	align-items: space-between;
 	text-decoration: none;
 	color: var(--sidebar-grey-color);
 }
+
+aside .menu a,
+aside .playlist a {
+	justify-content: center;
+	align-items: flex-start;
+}	
+
+aside .info a {
+	justify-content: flex-start;
+	align-items: center;
+}	
 
 aside .menu img,
 aside .playlist img,
@@ -204,6 +213,7 @@ aside .playlist .create-playlist {
 
 aside .info {
 	margin-top: auto;
+	width: 100%;
 }
 
 aside .info .install {
@@ -228,7 +238,6 @@ aside .info .user img {
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 	background-color: var(--sidebar-grey-color);
-	margin-top: 4px;
 }
 
 aside .info .user span {
@@ -263,7 +272,6 @@ MAIN SECTION
 	display: flex;
 }
 
-
 main .content {
 	padding: var(--fixed-height) 1.5rem 3rem;
 }
@@ -278,12 +286,12 @@ li {
 
 main .site-area ul {
 	max-width: 100%;
-	height: 2.5rem;
+	height: 2rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 4rem;
+	margin-bottom: 5rem;
 }
 
 main .site-area li {
@@ -645,11 +653,11 @@ mobile - 390px
 
 	main .site-area ul {
 		justify-content: flex-start;
-		margin-bottom: 12rem;
+		margin-bottom: 10rem;
 	}
 
 	main .site-area li {
-		margin-bottom: -0.5rem;
+		margin-bottom: -0.25rem;
 		flex: 0 0 100%;
 		font-size: 0.75rem;
 	}
@@ -657,7 +665,7 @@ mobile - 390px
 	main .site-area li.active::after {
 		width: 2.5rem;
 		left: 1rem;
-		bottom: 0.2rem;
+		bottom: -0.2rem;
 	}
 
 	main .cards-container .card img {
@@ -702,12 +710,16 @@ MEDIA QUERY FOR SIDEBAR
 @media screen and (max-width: 600px) {
 	aside {
 		--aside-width: 50px;
+		padding: 12px 0 5px;
+	}
+
+	aside .menu-container {
+		align-items: center;
 	}
 
 	aside .logo,
 	aside nav span,
 	aside nav .title,
-	aside .container-playlist,
 	aside .playlist {
 		display: none;
 	}
@@ -715,21 +727,27 @@ MEDIA QUERY FOR SIDEBAR
 	.menu-container .logo-small {
 		display: block;
 		width: 32px;
-		margin: 4px 0 25px -7px;
+		margin: 4px 0 30px;
 	}
 
 	.menu-container .highlight {
 		border-left: none;
-		margin: 0 0 10px -10px;
+		margin-left: 0;
+		padding-left: 0;
 	}
 
 	.menu-container .menu img {
-		margin-left: -5px;
-		margin-bottom: 6px;
+		margin-bottom: 10px;
 	}
 
-	.menu-container .info .user img {
-		margin-left: -3px;
+	aside .info a {
+		width: 100%;
+		justify-content: center;
+	}
+
+	aside .info .install::after {
+		content: "";
+		border-bottom: none;
 	}
 
 	aside .info .install::after {
