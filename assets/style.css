@@ -30,7 +30,7 @@ GENERAL DEFINITION
 */
 
 section {
-	margin-bottom: 5rem;
+	margin-bottom: 4.5rem;
 }
 
 aside {
@@ -60,6 +60,11 @@ footer {
 	right: 0;
 	background-color: var(--player-color);
 	z-index: 50;
+}
+
+ul,
+li {
+	list-style-type: none;
 }
 
 .white {
@@ -133,25 +138,14 @@ aside .menu {
 	margin-bottom: 2rem;
 }	
 
-aside .menu a,
-aside .playlist a,
-aside .info a {
+aside a {
 	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 	width: max-content;
 	text-decoration: none;
 	color: var(--sidebar-grey-color);
 }
-
-aside .menu a,
-aside .playlist a {
-	justify-content: center;
-	align-items: flex-start;
-}	
-
-aside .info a {
-	justify-content: flex-start;
-	align-items: center;
-}	
 
 aside .menu img,
 aside .playlist img,
@@ -182,17 +176,18 @@ aside .info span {
 
 /* playlist section */
 
-aside .playlist .title {
+aside .title {
 	margin-bottom: 0.7rem;
 	text-transform: uppercase;
 }
 
-aside .playlist .playlist-items {
+aside .playlist-items {
 	max-height: 30vh;
+	width: 100%;
 	overflow-y: auto;
 }
 
-aside .playlist .add {
+aside .add {
 	width: 2.5rem;
 	height: 2.5rem;
 	line-height: 2.5rem;
@@ -204,7 +199,7 @@ aside .playlist .add {
 	transition: background-color 200ms;
 }
 
-aside .playlist .create-playlist {
+aside .create-playlist {
 	font-size: 1rem;
 	line-height: 1.5rem;
 }
@@ -279,9 +274,13 @@ main .content {
 
 /* horizontal site nav menu */
 
-ul,
-li {
-	list-style-type: none;
+main a {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: max-content;
+	text-decoration: none;
+	color: var(--sidebar-grey-color);
 }
 
 main .site-area ul {
@@ -291,7 +290,7 @@ main .site-area ul {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 5rem;
+	margin: 0.5rem 0 5rem;
 }
 
 main .site-area li {
@@ -299,24 +298,24 @@ main .site-area li {
 	color: var(--main-grey-color);
 	text-transform: uppercase;
 	font-size: 0.9rem;
-	padding: 1rem 1rem;
+	padding: 0.5rem 1rem;
 	cursor: pointer;
 	white-space: nowrap;
 	position: relative;
 	transition: color 200ms;
 }
 
-main .site-area li.active {
+main .site-area a.active {
 	color: white;
 }
 
-main .site-area li.active::after {
+main .site-area a.active::after {
 	content: "";
 	position: absolute;
 	display: block;
 	left: 2rem;
 	right: 2rem;
-	bottom: -5px;
+	bottom: 2px;
 	height: 2px;
 	background-color: var(--lime-color);
 }
@@ -420,7 +419,7 @@ FOOTER WITH PLAYER
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
 }
 
 .player .left {
@@ -456,7 +455,8 @@ FOOTER WITH PLAYER
 /* left side */
 
 .player .left img {
-	width: 60px;
+	min-width: 40px;
+	width: 70px;
 	margin-right: 1rem;
 }
 
@@ -662,13 +662,15 @@ mobile - 390px
 		font-size: 0.75rem;
 	}
 
-	main .site-area li.active::after {
-		width: 2.5rem;
+	main .site-area a.active::after {
+		content: "";
+		width: 45px;
 		left: 1rem;
-		bottom: -0.2rem;
+		bottom: 6px;
 	}
 
 	main .cards-container .card img {
+		margin-top: 0.5rem;
 		margin-bottom: 0.2rem;
 		aspect-ratio: 1 / 1;
 	}
@@ -720,7 +722,8 @@ MEDIA QUERY FOR SIDEBAR
 	aside .logo,
 	aside nav span,
 	aside nav .title,
-	aside .playlist {
+	aside .playlist,
+	aside .playlist-items {
 		display: none;
 	}
 
