@@ -3,34 +3,34 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
 
-    /* 
+	/* 
     var definitions
     */
-    --main-bkg-color: #141922;
-    --main-grey-color: #7d7f84;
-    --lime-color: #adff2f;
-    --player-color: #282828;
-    --sidebar-grey-color: #6f6f6f;
-    --fixed-height: 90px;
-    --aside-width: 230px;
+	--main-bkg-color: #141922;
+	--main-grey-color: #7d7f84;
+	--lime-color: #adff2f;
+	--player-color: #282828;
+	--sidebar-grey-color: #6f6f6f;
+	--fixed-height: 90px;
+	--aside-width: 230px;
 }
 
 /*
 CONTAINER FOR ASIDE AND MAIN GRID
 */
 .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
+	height: 100vh;
+	width: 100%;
+	display: flex;
 }
 
 
@@ -39,36 +39,36 @@ GENERAL BLOCKS DEFINITION
 */
 
 section {
-    margin-bottom: 5rem;
+	margin-bottom: 5rem;
 }
 
 aside {
-    height: 100%;
-    background-color: black;
-    z-index: 5;
-    padding: 1rem;
-    flex: 0 0 var(--aside-width);
-    overflow: hidden;
-    position: relative;
+	height: 100%;
+	background-color: black;
+	z-index: 5;
+	padding: 1rem;
+	flex: 0 0 var(--aside-width);
+	overflow: hidden;
+	position: relative;
 }
 
 main {
-    --cols: 6;
-    --gap: 1rem;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    background-color: var(--main-bkg-color);
+	--cols: 6;
+	--gap: 1rem;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: var(--main-bkg-color);
 }
 
 footer {
-    height: var(--fixed-height);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--player-color);
-    z-index: 50;
+	height: var(--fixed-height);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--player-color);
+	z-index: 50;
 }
 
 
@@ -77,159 +77,174 @@ OVERLAY BAR, BUTTON AND HOVER EFFECT
 */
 
 .overlay {
-    height: var(--fixed-height);
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+	height: var(--fixed-height);
+	background-color: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
 }
 
 .overlay .btn {
-    position: absolute;
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    top: 1.5rem;
-    right: 2.25rem;
-    border: 2px solid white;
-    border-radius: 50px;
-    padding: 0.7em 2.2em;
-    overflow: hidden;
-    transition: 200ms;
+	position: absolute;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	top: 1.5rem;
+	right: 2.25rem;
+	border: 2px solid white;
+	border-radius: 50px;
+	padding: 0.7em 2.2em;
+	overflow: hidden;
+	transition: 200ms;
 }
 
 .overlay .btn:hover {
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 
 
 /*
-ASIDE CONTENTS
+ASIDE NAVBAR
 */
 
-aside .logo-small {
-    display: none;
+aside nav {
+	height: calc(100vh - 2 * var(--fixed-height));
 }
 
-aside .logo {
-    width: 140px;
+aside .container {
+	height: 100%;
+}
+
+aside .playlist-container {
+	height: 100%;
 }
 
 aside .aside-menu .white {
-    color: white;
+	color: white;
 }
 
-aside .aside-menu {
-    padding: 1rem 0;
-}
+aside .logo-small {
+	display: none;
+}	
 
-aside .aside-menu li>a {
-    display: flex;
-    align-items: center;
+aside .logo {
+	width: 140px;
+	margin: 0 0 1rem -0.4rem;
+}	
+
+aside .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}	
+
+aside .aside-menu li a,
+aside .playlist a {
+	display: flex;
+	justify-content: flex-start;
+	align-items: space-between;
 }
 
 aside a {
-    margin: 0;
-    text-decoration: none;
-    color: var(--sidebar-grey-color);
+	margin: 0;
+	text-decoration: none;
+	color: var(--sidebar-grey-color);
 }
 
 aside .highlight {
-    border-left: 2px solid var(--lime-color);
-    margin-left: -12px;
-    padding-left: 10px;
+	border-left: 2px solid var(--lime-color);
+	margin-left: -12px;
+	padding-left: 10px;
 }
 
 aside .aside-menu img {
-    width: 28px;
-    margin-right: 10px;
+	width: 28px;
 }
 
 aside .aside-menu span {
-    padding: 0.6rem 0;
-    color: var(--sidebar-grey-color);
-    font-size: .8rem;
-    transition: color 200ms;
+	padding: 0.6rem 0;
+	color: var(--sidebar-grey-color);
+	font-size: .8rem;
+	margin-left: 10px;
+	transition: color 200ms;
 }
 
 /*
 PLAYLIST
 */
 
-aside .aside-menu .title {
-    padding: 2rem 0 0.5rem;
-    text-transform: uppercase;
+aside .playlist-container span {
+	margin-left: 0;
 }
 
-aside .container-playlist>a {
-    display: flex;
-    width: 100%;
-    margin: 0.5rem 0;
+aside .playlist-container .title {
+	margin: 2rem 0 1rem;
+	text-transform: uppercase;
 }
 
-aside .playlist {
-    max-height: 30vh;
-    overflow-y: auto;
+aside .playlist-container .playlist-items {
+	max-height: 30vh;
+	overflow-y: auto;
 }
 
-aside .aside-menu .add {
-    width: 2.5rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    margin-right: 10px;
-    text-align: center;
-    background-color: var(--sidebar-grey-color);
-    font-size: 2rem;
-    color: black;
-    transition: background-color 200ms;
+aside .playlist-container .add {
+	width: 2.5rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	margin-right: 10px;
+	text-align: center;
+	background-color: var(--sidebar-grey-color);
+	font-size: 2rem;
+	color: black;
+	transition: background-color 200ms;
 }
 
-aside .aside-menu .create-playlist {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+aside .playlist-container .create-playlist {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 aside a:hover span {
-    color: white;
+	color: white;
 }
 
 aside a:hover .add {
-    background-color: white;
+	background-color: white;
 }
 
 
 /* download app and user info */
 
-aside .info {
-    margin-top: 11rem;
+aside .info-container {
+	display: flex;
+	margin-top: auto;
 }
 
-aside .info .install img {
-    width: 20px;
+aside .info-container .install {
+	border-bottom: 1px solid var(--sidebar-grey-color);
+	margin-bottom: 0.7rem;
 }
 
-aside .info .install {
-    border-bottom: 1px solid var(--sidebar-grey-color);
-    padding-bottom: 0.3rem;
-    margin-bottom: 0.5rem;
+aside .info-container .install img {
+	width: 20px;
 }
 
-aside .info .user img {
-    width: 25px;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background-color: var(--sidebar-grey-color);
+aside .info-container .user img {
+	width: 25px;
+	height: 25px;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background-color: var(--sidebar-grey-color);
 }
 
-aside .info .user span {
-    color: white;
-    font-size: 0.9rem;
+aside .info-container .user span {
+	color: white;
+	font-size: 0.9rem;
 }
 
 
@@ -239,7 +254,7 @@ MAIN SECTION
 */
 
 main .content {
-    padding: var(--fixed-height) 1.5rem 3rem;
+	padding: var(--fixed-height) 1.5rem 3rem;
 }
 
 
@@ -247,132 +262,132 @@ main .content {
 
 ul,
 li {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 main .site-area ul {
-    max-width: 100%;
-    height: 2.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4rem;
+	max-width: 100%;
+	height: 2.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 4rem;
 }
 
 main .site-area li {
-    height: 100%;
-    color: var(--main-grey-color);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 1rem 1rem;
-    cursor: pointer;
-    white-space: nowrap;
-    position: relative;
-    transition: color 200ms;
+	height: 100%;
+	color: var(--main-grey-color);
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	padding: 1rem 1rem;
+	cursor: pointer;
+	white-space: nowrap;
+	position: relative;
+	transition: color 200ms;
 }
 
 main .site-area li.active {
-    color: white;
+	color: white;
 }
 
 main .site-area li.active::after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 2rem;
-    right: 2rem;
-    bottom: 0;
-    height: 2px;
-    background-color: var(--lime-color);
+	content: "";
+	position: absolute;
+	display: block;
+	left: 2rem;
+	right: 2rem;
+	bottom: 0;
+	height: 2px;
+	background-color: var(--lime-color);
 }
 
 main .site-area li:hover {
-    color: white;
+	color: white;
 }
 
 
 /* Central Grid */
 
 main h2 {
-    color: white;
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+	color: white;
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
 }
 
 main .cards-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gap);
-    padding-top: 1rem;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+	padding-top: 1rem;
 }
 
 main .cards-container .card {
-    max-width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
-    display: flex;
-    flex-direction: column;
+	max-width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+	display: flex;
+	flex-direction: column;
 }
 
 main .cards-container .card .over {
-    position: relative;
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    margin-bottom: 1rem;
+	position: relative;
+	max-width: 100%;
+	aspect-ratio: 1 / 1;
+	margin-bottom: 1rem;
 }
 
 main .cards-container .card img {
-    filter: brightness(100%);
-    display: block;
-    max-width: 100%;
-    transition: brightness 300ms;
+	filter: brightness(100%);
+	display: block;
+	max-width: 100%;
+	transition: brightness 300ms;
 }
 
 main .popular .cards-container .card img {
-    border-radius: 50%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 }
 
 main .cards-container .card .title {
-    color: white;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-bottom: 0.8rem;
+	color: white;
+	font-size: 0.9rem;
+	text-align: center;
+	margin-bottom: 0.8rem;
 }
 
 main .cards-container .card .author {
-    color: var(--main-grey-color);
-    font-size: 0.85rem;
-    text-align: center;
+	color: var(--main-grey-color);
+	font-size: 0.85rem;
+	text-align: center;
 }
 
 main section .subtitle {
-    color: var(--main-grey-color);
-    font-size: 0.85rem;
-    text-align: left;
-    margin-bottom: 1.5rem;
+	color: var(--main-grey-color);
+	font-size: 0.85rem;
+	text-align: left;
+	margin-bottom: 1.5rem;
 }
 
 /* overlay effect on hover */
 main .cards-container .card .overlay {
-    opacity: 0;
-    position: absolute;
-    max-width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: transparent;
-    filter: invert(1);
-    transition: opacity 300ms;
+	opacity: 0;
+	position: absolute;
+	max-width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+	filter: invert(1);
+	transition: opacity 300ms;
 }
 
 main .cards-container .card:hover .overlay {
-    opacity: 1;
+	opacity: 1;
 }
 
 main .cards-container .card:hover .image {
-    filter: brightness(40%);
+	filter: brightness(40%);
 }
 
 
@@ -383,197 +398,197 @@ FOOTER WITH PLAYER
 /* general rules */
 
 .player {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
 }
 
 .player .left {
-    height: 80%;
-    display: flex;
-    flex: 0 0 30%;
-    justify-content: flex-start;
-    align-items: center;
-    color: var(--main-grey-color);
+	height: 80%;
+	display: flex;
+	flex: 0 0 30%;
+	justify-content: flex-start;
+	align-items: center;
+	color: var(--main-grey-color);
 }
 
 .player .center {
-    height: 80%;
-    display: flex;
-    flex: 0 0 40%;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    color: white;
+	height: 80%;
+	display: flex;
+	flex: 0 0 40%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.1rem;
+	color: white;
 }
 
 .player .right {
-    height: 80%;
-    display: flex;
-    flex: 0 0 30%;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 1.1rem;
-    color: white;
+	height: 80%;
+	display: flex;
+	flex: 0 0 30%;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 1.1rem;
+	color: white;
 }
 
 /* left side */
 
 .player .left img {
-    width: 60px;
-    margin-right: 1rem;
+	width: 60px;
+	margin-right: 1rem;
 }
 
 .player .left .author {
-    color: white;
-    font-size: 0.8rem;
-    line-height: 1.2rem;
+	color: white;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
 }
 
 .player .left .title {
-    font-size: 0.7rem;
-    line-height: 1.2rem;
-    cursor: pointer;
+	font-size: 0.7rem;
+	line-height: 1.2rem;
+	cursor: pointer;
 }
 
 .player .left .text {
-    margin-right: 2.5rem;
+	margin-right: 2.5rem;
 }
 
 .player .left i {
-    font-size: 1.1rem;
-    margin-right: 0.8rem;
-    cursor: pointer;
+	font-size: 1.1rem;
+	margin-right: 0.8rem;
+	cursor: pointer;
 }
 
 .player .left .title:hover {
-    color: white;
-    text-decoration: underline;
+	color: white;
+	text-decoration: underline;
 }
 
 .player .left i:hover {
-    color: white;
+	color: white;
 }
 
 
 /* central part */
 
 .player .center .icons {
-    display: flex;
-    align-items: center;
-    flex: 1;
+	display: flex;
+	align-items: center;
+	flex: 1;
 }
 
 .player .center .icons i:not(:last-child) {
-    margin-right: 1.5rem;
+	margin-right: 1.5rem;
 }
 
 .player .center .icons i:nth-child(3) {
-    font-size: 1.75rem;
-    transition: 200ms
+	font-size: 1.75rem;
+	transition: 200ms
 }
 
 .player .center .icons i:nth-child(3):hover {
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .player .center .time {
-    display: flex;
-    align-items: center;
-    flex: 0 0;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	flex: 0 0;
+	cursor: pointer;
 }
 
 .player .center .time span {
-    font-size: 0.75rem;
-    color: white;
+	font-size: 0.75rem;
+	color: white;
 }
 
 .player .center .time .start {
-    position: relative;
-    width: 130px;
-    height: 4px;
-    background-color: white;
-    margin-left: 1.5rem;
-    transition: background-color 300ms;
+	position: relative;
+	width: 130px;
+	height: 4px;
+	background-color: white;
+	margin-left: 1.5rem;
+	transition: background-color 300ms;
 }
 
 .player .center .time .circle {
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    top: -5px;
-    right: -14px;
-    opacity: 0;
-    background-color: white;
-    border-radius: 20px;
-    transition: opacity 150ms
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: -5px;
+	right: -14px;
+	opacity: 0;
+	background-color: white;
+	border-radius: 20px;
+	transition: opacity 150ms
 }
 
 .player .center .time .remaining {
-    width: 270px;
-    height: 4px;
-    background-color: var(--main-grey-color);
-    margin-right: 1.5rem;
+	width: 270px;
+	height: 4px;
+	background-color: var(--main-grey-color);
+	margin-right: 1.5rem;
 }
 
 .player .center .time:hover .start {
-    background-color: var(--lime-color);
+	background-color: var(--lime-color);
 }
 
 .player .center .time:hover .circle {
-    opacity: 1;
+	opacity: 1;
 }
 
 
 /* right side */
 
 .player .right i {
-    font-size: 0.9rem;
-    margin-right: 1rem;
-    cursor: pointer;
+	font-size: 0.9rem;
+	margin-right: 1rem;
+	cursor: pointer;
 }
 
 .player .right .volume {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
 }
 
 .player .right .volume .start {
-    position: relative;
-    width: 60px;
-    height: 4px;
-    background-color: white;
-    transition: background-color 300ms;
+	position: relative;
+	width: 60px;
+	height: 4px;
+	background-color: white;
+	transition: background-color 300ms;
 }
 
 .player .right .volume .circle {
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    top: -5px;
-    right: -14px;
-    opacity: 0;
-    background-color: white;
-    border-radius: 20px;
-    transition: opacity 150ms;
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: -5px;
+	right: -14px;
+	opacity: 0;
+	background-color: white;
+	border-radius: 20px;
+	transition: opacity 150ms;
 }
 
 .player .right .volume .remaining {
-    width: 140px;
-    height: 4px;
-    background-color: var(--main-grey-color);
+	width: 140px;
+	height: 4px;
+	background-color: var(--main-grey-color);
 }
 
 .player .right .volume:hover .start {
-    background-color: var(--lime-color);
+	background-color: var(--lime-color);
 }
 
 .player .right .volume:hover .circle {
-    opacity: 1;
+	opacity: 1;
 }
 
 
@@ -583,19 +598,19 @@ MEDIA QUERIES FOR CENTRAL GRID
 */
 
 @media screen and (max-width: 1100px) and (min-width: 701px) {
-    main .cards-container .card {
-        --cols: 4;
-    }
+	main .cards-container .card {
+		--cols: 4;
+	}
 }
 
 @media screen and (max-width: 700px) and (min-width: 391px) {
-    main .cards-container .card {
-        --cols: 2;
-    }
+	main .cards-container .card {
+		--cols: 2;
+	}
 
-    main .site-area li {
-        font-size: 0.75rem;
-    }
+	main .site-area li {
+		font-size: 0.75rem;
+	}
 }
 
 /*
@@ -603,58 +618,58 @@ mobile - 390px
 */
 
 @media screen and (max-width: 390px) {
-    main .cards-container .card {
-        --cols: 1;
-    }
+	main .cards-container .card {
+		--cols: 1;
+	}
 
-    main .site-area ul {
-        justify-content: flex-start;
-        margin-bottom: 12rem;
-    }
+	main .site-area ul {
+		justify-content: flex-start;
+		margin-bottom: 12rem;
+	}
 
-    main .site-area li {
-        margin-bottom: -0.5rem;
-        flex: 0 0 100%;
-        font-size: 0.75rem;
-    }
+	main .site-area li {
+		margin-bottom: -0.5rem;
+		flex: 0 0 100%;
+		font-size: 0.75rem;
+	}
 
-    main .site-area li.active::after {
-        width: 2.5rem;
-        left: 1rem;
-        bottom: 0.2rem;
-    }
+	main .site-area li.active::after {
+		width: 2.5rem;
+		left: 1rem;
+		bottom: 0.2rem;
+	}
 
-    main .cards-container .card img {
-        margin-bottom: 0.2rem;
-        aspect-ratio: 1 / 1;
-    }
+	main .cards-container .card img {
+		margin-bottom: 0.2rem;
+		aspect-ratio: 1 / 1;
+	}
 
-    main .cards-container .card .title {
-        margin-bottom: 0.3rem;
-    }
+	main .cards-container .card .title {
+		margin-bottom: 0.3rem;
+	}
 
-    main .cards-container .card .author {
-        margin-bottom: 1.5rem;
-    }
+	main .cards-container .card .author {
+		margin-bottom: 1.5rem;
+	}
 
-    main h2 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
+	main h2 {
+		font-size: 1.5rem;
+		text-align: center;
+	}
 
-    main section .subtitle {
-        text-align: center;
-        margin-bottom: 0.75rem;
-    }
+	main section .subtitle {
+		text-align: center;
+		margin-bottom: 0.75rem;
+	}
 
-    .overlay .btn {
-        width: 50%;
-        text-align: center;
-        font-size: 0.65rem;
-        top: 1.8rem;
-        right: 2rem;
-        border: 1px solid white;
-    }
+	.overlay .btn {
+		width: 50%;
+		text-align: center;
+		font-size: 0.65rem;
+		top: 1.8rem;
+		right: 2rem;
+		border: 1px solid white;
+	}
 }
 
 
@@ -664,7 +679,7 @@ MEDIA QUERY FOR SIDEBAR
 */
 
 @media screen and (max-width: 600px) {
-    aside {
+	/* aside {
         --aside-width: 50px;
         padding: 0.7rem 0;
     }
@@ -675,7 +690,7 @@ MEDIA QUERY FOR SIDEBAR
         width: 32px;
     }
 
-    aside .aside-menu li>a {
+    aside .aside-menu li > a {
         display: block;
         margin: 30px 12px 0 10px;
     }
@@ -696,4 +711,63 @@ MEDIA QUERY FOR SIDEBAR
     aside .info .user img {
         margin-left: 3px;
     }
+} */
+
+
+	aside {
+		--aside-width: 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 0.7rem 0 var(--fixed-height);
+	}
+
+	aside * {
+		margin: 0;
+		padding: 0;
+	}
+
+	aside .logo,
+	aside .aside-menu span,
+	aside .aside-menu .title,
+	aside .container-playlist,
+	aside .playlist {
+		display: none;
+	}
+
+	aside .logo-small {
+		display: block;
+		width: 32px;
+	}	
+
+	aside .highlight {
+		border-left: none;
+	}	
+
+	aside .container {
+		height: calc(100vx - var(--fixed-height));
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	aside .main-menu li {
+		margin-bottom: 10px;
+	}
+
+	aside .main-menu img,
+	aside .info img {
+		margin: 5px 0 0 3px;
+	}
+
+	aside .info {
+		margin-top: 0px;
+		align-self: flex-end;
+	}
+
+	aside .info li {
+		margin-bottom: 0;
+	}
 }

@@ -1,104 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Web</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body class="container">
+
+    <!-- 
+    LEFT NAVBAR AND INFO
+    -->
     <aside>
         <a href="#">
             <img class="logo" src="img/logo.svg" alt="Logo Spotify">
             <img class="logo-small" src="img/logo-small.svg" alt="Logo Spotify piccolo">
         </a>
         <nav class="aside-menu">
-            <ul>
-                <li class="highlight">
-                    <a href="#">
-                        <img src="img/home.svg" alt="Home">
-                        <span class="white">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/search.svg" alt="Cerca">
-                        <span>Cerca</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="img/libreria.svg" alt="La tua libreria">
-                        <span>La tua libreria</span>
-                    </a>
-                </li>
-            </ul>
-
-            <div class="title white">Playlist</div>
-            <div class="container-playlist">
-                <a href="#">
-                    <div class="add">+</div>
-                    <span class="create-playlist">Crea Playlist</span>
-                </a>
-            </div>
-            <ul class="playlist">
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span>Nome Playlist</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="info">
-                <ul>
-                    <li class="install">
+            <div class="container">
+                <ul class="main-menu">
+                    <li class="highlight">
                         <a href="#">
-                            <img src="img/download.svg" alt="Installa app">
-                            <span>Installa app</span>
+                            <img src="img/home.svg" alt="Home">
+                            <span class="white">Home</span>
                         </a>
                     </li>
-                    <li class="user">
+                    <li>
                         <a href="#">
-                            <div>
-                                <img class="user" src="img/profile.svg" alt="Utente">
-                            </div>
-                            <span>John Doe</span>
+                            <img src="img/search.svg" alt="Cerca">
+                            <span>Cerca</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/libreria.svg" alt="La tua libreria">
+                            <span>La tua libreria</span>
                         </a>
                     </li>
                 </ul>
+
+                <div class="playlist-container">
+                    <div class="title white">Playlist</div>
+                    <div class="playlist">
+                        <a href="#">
+                            <div class="add">+</div>
+                            <span class="create-playlist">Crea Playlist</span>
+                        </a>
+                    </div>
+                    <ul class="playlist-items">
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Nome Playlist</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-container">
+                    <ul>
+                        <li class="install">
+                            <a href="#">
+                                <img src="img/download.svg" alt="Installa app">
+                                <span>Installa app</span>
+                            </a>
+                        </li>
+                        <li class="user">
+                            <a href="#">
+                                <div>
+                                    <img class="user" src="img/profile.svg" alt="Utente">
+                                </div>
+                                <span>John Doe</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -107,7 +118,7 @@
     <main>
         <div class="content">
 
-        <!-- central navbar -->
+            <!-- central navbar -->
             <nav class="site-area">
                 <ul>
                     <li class="active">
@@ -121,7 +132,7 @@
                 </ul>
             </nav>
 
-        <!-- section 1 - Recently Played -->
+            <!-- section 1 - Recently Played -->
             <section class="recently-played">
                 <h2>Recently Played</h2>
                 <div class="cards-container">
@@ -146,7 +157,7 @@
                             <img class="image" src="img/aquietplace.jpeg" alt="A quiet place">
                             <img class="overlay" src="img/circle-play-regular.svg" alt="">
                         </div>
-                            <div class="title">A quiet place</div>
+                        <div class="title">A quiet place</div>
                         <div class="author">Subtitle</div>
                     </div>
                     <div class="card">
@@ -176,7 +187,7 @@
                 </div>
             </section>
 
-        <!-- section 2 - Created for -->
+            <!-- section 2 - Created for -->
             <section class="created-for">
                 <h2>Creato per John Doe</h2>
                 <p class="subtitle">Più ascolti, più accurati saranno i suggerimenti</p>
@@ -198,7 +209,7 @@
                 </div>
             </section>
 
-        <!-- section 3 - Artisti più ascoltati -->
+            <!-- section 3 - Artisti più ascoltati -->
             <section class="popular">
                 <h2>Artisti più popolari</h2>
                 <p class="subtitle">Più ascolti, più accurati saranno i suggerimenti</p>
@@ -237,7 +248,7 @@
 
     <footer class="player">
 
-    <!-- left side -->
+        <!-- left side -->
         <div class="left">
             <img src="img/surrender.jpg" alt="">
             <div class="text">
@@ -250,7 +261,7 @@
             </div>
         </div>
 
-    <!-- central part -->
+        <!-- central part -->
         <div class="center">
             <div class="icons">
                 <i class="fa-solid fa-shuffle"></i>
@@ -269,7 +280,7 @@
             </div>
         </div>
 
-    <!-- right side -->
+        <!-- right side -->
         <div class="right">
             <div class="icons">
                 <i class="fa-solid fa-list-ul"></i>
@@ -286,4 +297,5 @@
 
     </footer>
 </body>
+
 </html>
