@@ -519,8 +519,11 @@ FOOTER WITH PLAYER
 
 .player .center .time .start {
 	position: relative;
-	width: 130px;
+	width: 8vw;
 	height: 4px;
+	margin: 7px 0; /* helps to trigger hover effect */
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	background-color: white;
 	margin-left: 1.5rem;
 	transition: background-color 300ms;
@@ -539,8 +542,10 @@ FOOTER WITH PLAYER
 }
 
 .player .center .time .remaining {
-	width: 270px;
+	width: 13vw;
 	height: 4px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 	background-color: var(--main-grey-color);
 	margin-right: 1.5rem;
 }
@@ -570,8 +575,11 @@ FOOTER WITH PLAYER
 
 .player .right .volume .start {
 	position: relative;
-	width: 60px;
+	width: 5vw;
 	height: 4px;
+	margin: 7px 0; /* helps to trigger hover effect */
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	background-color: white;
 	transition: background-color 300ms;
 }
@@ -589,8 +597,10 @@ FOOTER WITH PLAYER
 }
 
 .player .right .volume .remaining {
-	width: 140px;
+	width: 8vw;
 	height: 4px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 	background-color: var(--main-grey-color);
 }
 
