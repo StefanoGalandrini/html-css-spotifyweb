@@ -174,17 +174,20 @@ aside .aside-menu span {
 	padding: 0.6rem 0;
 	color: var(--sidebar-grey-color);
 	font-size: .8rem;
-	margin-left: 10px;
 	transition: color 200ms;
 }
 
-aside .main-menu li:hover
+aside .main-menu span,
+aside .info-container span {
+	margin-left: 10px;
+}
+
 
 /*
 PLAYLIST
 */
 
-aside .playlist-container span {
+aside .aside-menu .playlist-container .playlist span {
 	margin-left: 0;
 }
 
