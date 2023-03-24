@@ -316,7 +316,7 @@ main .site-area li.active::after {
 	display: block;
 	left: 2rem;
 	right: 2rem;
-	bottom: 0;
+	bottom: -5px;
 	height: 2px;
 	background-color: var(--lime-color);
 }
