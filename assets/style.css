@@ -24,18 +24,9 @@ html {
 	--aside-width: 230px;
 }
 
-/*
-CONTAINER FOR ASIDE AND MAIN GRID
-*/
-.container {
-	height: 100vh;
-	width: 100%;
-	display: flex;
-}
-
 
 /*
-GENERAL BLOCKS DEFINITION
+GENERAL DEFINITION
 */
 
 section {
@@ -71,6 +62,10 @@ footer {
 	z-index: 50;
 }
 
+.white {
+	color: white;
+}
+
 
 /*
 OVERLAY BAR, BUTTON AND HOVER EFFECT
@@ -90,7 +85,6 @@ OVERLAY BAR, BUTTON AND HOVER EFFECT
 .overlay .btn {
 	position: absolute;
 	text-decoration: none;
-	color: white;
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	top: 1.5rem;
@@ -112,50 +106,50 @@ OVERLAY BAR, BUTTON AND HOVER EFFECT
 ASIDE NAVBAR
 */
 
-aside nav {
-	height: calc(100vh - 2 * var(--fixed-height));
-}
-
-aside .container {
-	height: 100%;
-}
-
-aside .playlist-container {
-	height: 100%;
-}
-
-aside .aside-menu .white {
-	color: white;
-}
-
 aside .logo-small {
 	display: none;
 }	
 
 aside .logo {
-	width: 140px;
-	margin: 0 0 1rem -0.4rem;
+	height: 45px;
+	width: 100%;
+	margin-left: -0.4rem;
+	margin-bottom: 15px;
 }	
 
-aside .container {
+
+/* menu nav items */
+
+aside .menu-container {
+	height: calc(100vh - var(--fixed-height) - 30px);
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	justify-content: space-between;
 }	
 
-aside .aside-menu li a,
+aside .menu {
+	margin-bottom: 2rem;
+}	
+
+aside .menu a,
 aside .playlist a,
-aside .info-container a {
+aside .info a {
 	display: flex;
 	width: max-content;
 	justify-content: flex-start;
 	align-items: space-between;
-}
-
-aside a {
-	margin: 0;
 	text-decoration: none;
 	color: var(--sidebar-grey-color);
+}
+
+aside .menu img,
+aside .playlist img,
+aside .info img {
+	width: 28px;
+	filter: brightness(0.6);
+	transition: filter 200ms;
 }
 
 aside .highlight {
@@ -164,44 +158,32 @@ aside .highlight {
 	padding-left: 10px;
 }
 
-aside .aside-menu img {
-	width: 28px;
-	filter: brightness(0.6);
-	transition: filter 200ms;
-}
-
-aside .aside-menu span {
+aside nav span {
 	padding: 0.6rem 0;
 	color: var(--sidebar-grey-color);
 	font-size: .8rem;
 	transition: color 200ms;
 }
 
-aside .main-menu span,
-aside .info-container span {
+aside .menu span,
+aside .info span {
 	margin-left: 10px;
 }
 
 
-/*
-PLAYLIST
-*/
+/* playlist section */
 
-aside .aside-menu .playlist-container .playlist span {
-	margin-left: 0;
-}
-
-aside .playlist-container .title {
-	margin: 2rem 0 1rem;
+aside .playlist .title {
+	margin-bottom: 0.7rem;
 	text-transform: uppercase;
 }
 
-aside .playlist-container .playlist-items {
+aside .playlist .playlist-items {
 	max-height: 30vh;
 	overflow-y: auto;
 }
 
-aside .playlist-container .add {
+aside .playlist .add {
 	width: 2.5rem;
 	height: 2.5rem;
 	line-height: 2.5rem;
@@ -213,33 +195,39 @@ aside .playlist-container .add {
 	transition: background-color 200ms;
 }
 
-aside .playlist-container .create-playlist {
+aside .playlist .create-playlist {
 	font-size: 1rem;
-	margin-bottom: 0.5rem;
+	line-height: 1.5rem;
 }
 
-/* download app and user info */
+/* section download and user info */
 
-aside .info-container {
-	display: flex;
+aside .info {
 	margin-top: auto;
 }
 
-aside .info-container .install {
-	border-bottom: 1px solid var(--sidebar-grey-color);
+aside .info .install {
 	margin-bottom: 0.7rem;
 }
 
-aside .info-container .install img {
+aside .info .install img {
 	width: 20px;
 }
 
-aside .info-container .user img {
+aside .info .install::after {
+	content: "";
+	border-bottom: 1px solid var(--sidebar-grey-color);
+	display: block;
+	width: 190px;
+}
+
+aside .info .user img {
 	width: 25px;
 	height: 25px;
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 	background-color: var(--sidebar-grey-color);
+	margin-top: 3px;
 }
 
 aside .info-container .user span {
@@ -266,6 +254,14 @@ aside a:hover .add {
 /*
 MAIN SECTION
 */
+
+
+.container {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+}
+
 
 main .content {
 	padding: var(--fixed-height) 1.5rem 3rem;
@@ -710,8 +706,8 @@ MEDIA QUERY FOR SIDEBAR
 	}
 
 	aside .logo,
-	aside .aside-menu span,
-	aside .aside-menu .title,
+	aside nav span,
+	aside nav .title,
 	aside .container-playlist,
 	aside .playlist {
 		display: none;
@@ -722,7 +718,7 @@ MEDIA QUERY FOR SIDEBAR
 		width: 32px;
 		margin: 0 auto 1.5rem;
 	}
-	aside .main-menu img {
+	aside .menu-container img {
 		margin-bottom: 10px;
 	}
 

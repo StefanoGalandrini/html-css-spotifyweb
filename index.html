@@ -19,13 +19,13 @@
     LEFT NAVBAR AND INFO
     -->
     <aside>
-        <a href="#">
-            <img class="logo" src="img/logo.svg" alt="Logo Spotify">
-            <img class="logo-small" src="img/logo-small.svg" alt="Logo Spotify piccolo">
-        </a>
-        <nav class="aside-menu">
-            <div class="container">
-                <ul class="main-menu">
+        <nav class="menu-container">
+            <a href="#">
+                <img class="logo" src="img/logo.svg" alt="Logo Spotify">
+                <img class="logo-small" src="img/logo-small.svg" alt="Logo Spotify piccolo">
+            </a>
+            <div class="menu">
+                <ul class="menu-items">
                     <li class="highlight">
                         <a href="#">
                             <img src="img/home.svg" alt="Home">
@@ -45,72 +45,71 @@
                         </a>
                     </li>
                 </ul>
+            </div>
 
-                <div class="playlist-container">
-                    <div class="title white">Playlist</div>
-                    <div class="playlist">
+            <div class="playlist">
+                <div class="title white">Playlist</div>
+                <div class="add-playlist">
+                    <a href="#">
+                        <div class="add">+</div>
+                        <span class="create-playlist">Crea Playlist</span>
+                    </a>
+                </div>
+                <ul class="playlist-items">
+                    <li>
                         <a href="#">
-                            <div class="add">+</div>
-                            <span class="create-playlist">Crea Playlist</span>
+                            <span>Nome Playlist</span>
                         </a>
-                    </div>
-                    <ul class="playlist-items">
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>Nome Playlist</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="info-container">
-                    <ul>
-                        <li class="install">
-                            <a href="#">
-                                <img src="img/download.svg" alt="Installa app">
-                                <span>Installa app</span>
-                            </a>
-                        </li>
-                        <li class="user">
-                            <a href="#">
-                                <img src="img/profile.svg" alt="Utente">
-                                <span>John Doe</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Nome Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Nome Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Nome Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Nome Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Nome Playlist</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Nome Playlist</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="info">
+                <ul>
+                    <li class="install">
+                        <a href="#">
+                            <img src="img/download.svg" alt="Installa app">
+                            <span>Installa app</span>
+                        </a>
+                    </li>
+                    <li class="user">
+                        <a href="#">
+                            <img src="img/profile.svg" alt="Utente">
+                            <span class="white">John Doe</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
-
     </aside>
 
     <main>
@@ -236,7 +235,7 @@
     OVERLAY BAR
     -->
     <div class="overlay">
-        <a class="btn" href="#">Effettua l'upgrade</a>
+        <a class="btn white" href="#">Effettua l'upgrade</a>
     </div>
 
 
