@@ -166,6 +166,8 @@ aside .highlight {
 
 aside .aside-menu img {
 	width: 28px;
+	filter: brightness(0.6);
+	transition: filter 200ms;
 }
 
 aside .aside-menu span {
@@ -175,6 +177,8 @@ aside .aside-menu span {
 	margin-left: 10px;
 	transition: color 200ms;
 }
+
+aside .main-menu li:hover
 
 /*
 PLAYLIST
@@ -211,15 +215,6 @@ aside .playlist-container .create-playlist {
 	margin-bottom: 0.5rem;
 }
 
-aside a:hover span {
-	color: white;
-}
-
-aside a:hover .add {
-	background-color: white;
-}
-
-
 /* download app and user info */
 
 aside .info-container {
@@ -248,6 +243,20 @@ aside .info-container .user span {
 	color: white;
 	font-size: 0.9rem;
 }
+
+/* hover effects */
+aside a:hover span {
+	color: white;
+}
+
+aside a:hover img {
+	filter: brightness(1);
+}
+
+aside a:hover .add {
+	background-color: white;
+}
+
 
 
 
